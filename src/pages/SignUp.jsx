@@ -8,6 +8,7 @@ import {
 } from "firebase/auth"
 import { setDoc, doc, serverTimestamp } from "firebase/firestore"
 import { db } from "../firebase.config"
+import OAuth from "../components/OAuth"
 import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg"
 import visibilityIcon from "../assets/svg/visibilityIcon.svg"
 
@@ -103,9 +104,11 @@ const SignUp = () => {
               onClick={() => setShowPassword((prevState) => !prevState)}
             />
           </div>
+
           <Link to="/forgot-password" className="forgotPasswordLink">
             Forgot Password
           </Link>
+
           <div className="signUpBar">
             <p className="signUpText">Sign Up</p>
             <button className="signUpButton">
@@ -113,7 +116,9 @@ const SignUp = () => {
             </button>
           </div>
         </form>
-        {/* Google OAuth component */}
+
+        <OAuth />
+
         <Link to="/sign-in" className="registerLink">
           Sign In Instead
         </Link>
