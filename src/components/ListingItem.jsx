@@ -11,7 +11,8 @@ const ListingItem = ({ listing, id, onDelete }) => {
         className="categoryListingLink"
       >
         <img
-          src={listing.imageUrls[0]}
+          // imageUrls in database?
+          src={listing.imgUrls[0]}
           alt={listing.name}
           className="categoryListingImg"
         />
